@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+	<form>
+  Lat: <input type="text" id="lat1"><br>
+  Lng: <input type="text" id="lat2"><br>
+	  <input type="submit" value="Submit" id="submit" onClick="initMap()">
+	</form>
+	
+	<p id = "demo1"></p>
+    <script>
+      function initMap() {
+		
+		var lat1 = document.getElementById("lat1").value;
+		var lat2 = document.getElementById("lat2").value;
+
+		var address1 = {lat: lat1, lng: lat2};
+		var address2 = {lat: 40.714535, lng: -74.014043};
+		//var address1 = {lat: document.getElementById("address1").value, lng: document.getElementById("address2").value};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: address2
+        });
+        var marker = new google.maps.Marker({
+          position: address1,
+          map: map
+        });
+		var marker2 = new google.maps.Marker({
+          position: address2,
+          map: map
+        });
+		
+		
+		
+	  document.getElementById("demo1").innerHTML = address1.lat;
+		
+		
+      }
+	  
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOxyk1OVAmZX34_P7lMJ5aAnXQZF-5lR0&callback=initMap">
+    </script>
+  </body>
+</html>

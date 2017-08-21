@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+
+    <script type="text/javascript" src="gmaps.js"></script>
+    <script type="text/javascript" src="latlng.js"></script>
+
+</head>
+
+<body>
+  <h3>Enter your addresses below</h3>
+
+  <div>
+   	<input type="text" id="my-address">
+   	<button id="getCords" onClick="codeAddress();">Submit</button>
+    <p id = "lat"></p>
+  	<p id = "long"></p>
+
+    <input type="text" id="my-address1">
+    <button id="getCords1" onClick="codeAddress1();">Submit</button>
+  	<p id = "lat1"></p>
+  	<p id = "long1"></p>
+  </div>
+
+  <div id="map">
+  </div>
+
+	  <p id = "latAvg"></p>
+    <p id = "lngAvg"></p>
+    <button onClick = "findmidpoint()";>Find your Midpoint</button>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOxyk1OVAmZX34_P7lMJ5aAnXQZF-5lR0&callback=initMap&libraries=places&sens"></script>
+</body>
+
+</html>
